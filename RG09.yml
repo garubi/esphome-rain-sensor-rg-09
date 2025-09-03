@@ -1,8 +1,16 @@
+substitutions:
+  name: centralina-pioggia-rg09
+  friendly_name: "Centralina pioggia"
+
 esphome:
-  name: esphome-web-306fac
-  friendly_name: ESP32rg09
-  min_version: 2025.5.0
+  name: $name
+  friendly_name: $friendly_name
+  min_version: 2025.8.2
   name_add_mac_suffix: false
+  comment: "Sensore pioggia RG-09 con sensore di temperatura"
+  project:
+    name: "garubi.centralina-pioggia-rg09"
+    version: "1.0.0"
 
 esp32:
   board: esp32dev
@@ -19,15 +27,13 @@ api:
 # Allow Over-The-Air updates
 ota:
 - platform: esphome
+  password: !secret ota_password
 
 wifi:
-  # ssid: !secret wifi_ssid
-  # password: !secret wifi_password
-  
   # Configura il fallback hotspot
-  ap:
-    ssid: "ESP32-RG09-Fallback"
-    password: "configesp32"
+  ap: 
+    ssid: $name
+    password: !secret fallback_hotspot_password
 
 # Aggiungi il captive portal
 captive_portal:
