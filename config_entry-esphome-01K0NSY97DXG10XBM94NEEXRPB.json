@@ -1,0 +1,265 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2025.6.3",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.13.3",
+    "docker": true,
+    "arch": "aarch64",
+    "timezone": "Europe/Rome",
+    "os_name": "Linux",
+    "os_version": "6.6.74-haos-raspi",
+    "supervisor": "2025.07.1",
+    "host_os": "Home Assistant OS 15.2",
+    "docker_version": "28.0.4",
+    "chassis": "embedded",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "hacs": {
+      "documentation": "https://hacs.xyz/docs/use/",
+      "version": "2.0.5",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "meross_lan": {
+      "documentation": "https://github.com/krahabb/meross_lan",
+      "version": "5.5.0",
+      "requirements": []
+    },
+    "dpc": {
+      "documentation": "https://github.com/caiosweet/Home-Assistant-custom-components-DPC-Alert",
+      "version": "2023.10.0",
+      "requirements": []
+    }
+  },
+  "integration_manifest": {
+    "domain": "esphome",
+    "name": "ESPHome",
+    "after_dependencies": [
+      "hassio",
+      "zeroconf",
+      "tag"
+    ],
+    "codeowners": [
+      "OttoWinter",
+      "jesserockz",
+      "kbx81",
+      "bdraco"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "assist_pipeline",
+      "bluetooth",
+      "intent",
+      "ffmpeg",
+      "http"
+    ],
+    "dhcp": [
+      {
+        "registered_devices": true
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/esphome",
+    "integration_type": "device",
+    "iot_class": "local_push",
+    "loggers": [
+      "aioesphomeapi",
+      "noiseprotocol",
+      "bleak_esphome"
+    ],
+    "mqtt": [
+      "esphome/discover/#"
+    ],
+    "quality_scale": "platinum",
+    "requirements": [
+      "aioesphomeapi==33.0.0",
+      "esphome-dashboard-api==1.3.0",
+      "bleak-esphome==2.16.0"
+    ],
+    "zeroconf": [
+      "_esphomelib._tcp.local."
+    ],
+    "is_built_in": true,
+    "overwrites_built_in": false
+  },
+  "setup_times": {
+    "null": {
+      "setup": 0.36937024898361415
+    },
+    "cb4f29a9a986fb2a2cf4935034b353dc": {
+      "wait_import_platforms": -0.497881613089703,
+      "config_entry_setup": 0.6090231019770727
+    }
+  },
+  "data": {
+    "config": {
+      "created_at": "2025-07-21T06:15:06.733702+00:00",
+      "data": {
+        "host": "192.168.1.154",
+        "port": 6053,
+        "password": "",
+        "noise_psk": "",
+        "device_name": "esphome-web-306fac"
+      },
+      "discovery_keys": {
+        "zeroconf": [
+          {
+            "__type": "<class 'homeassistant.helpers.discovery_flow.DiscoveryKey'>",
+            "repr": "DiscoveryKey(domain='zeroconf', key=('_esphomelib._tcp.local.', 'esphome-web-306fac._esphomelib._tcp.local.'), version=1)"
+          }
+        ]
+      },
+      "disabled_by": null,
+      "domain": "esphome",
+      "entry_id": "01K0NSY97DXG10XBM94NEEXRPB",
+      "minor_version": 1,
+      "modified_at": "2025-07-21T06:22:11.528611+00:00",
+      "options": {
+        "allow_service_calls": false,
+        "subscribe_logs": true
+      },
+      "pref_disable_new_entities": false,
+      "pref_disable_polling": false,
+      "source": "zeroconf",
+      "subentries": [],
+      "title": "ESP32rg09",
+      "unique_id": "1c:69:20:30:6f:ac",
+      "version": 1
+    },
+    "storage_data": {
+      "device_info": {
+        "uses_password": false,
+        "name": "esphome-web-306fac",
+        "friendly_name": "ESP32rg09",
+        "mac_address": "**REDACTED**",
+        "compilation_time": "Jul 20 2025, 20:48:03",
+        "model": "esp32dev",
+        "manufacturer": "Espressif",
+        "has_deep_sleep": false,
+        "esphome_version": "2025.7.2",
+        "project_name": "",
+        "project_version": "",
+        "webserver_port": 0,
+        "legacy_voice_assistant_version": 0,
+        "voice_assistant_feature_flags": 0,
+        "legacy_bluetooth_proxy_version": 0,
+        "bluetooth_proxy_feature_flags": 0,
+        "suggested_area": "",
+        "bluetooth_mac_address": ""
+      },
+      "services": [],
+      "api_version": {
+        "major": 1,
+        "minor": 10
+      },
+      "sensor": [
+        {
+          "object_id": "livello_pioggia",
+          "key": 874114807,
+          "name": "Livello Pioggia",
+          "unique_id": "esphome-web-306facsensorlivello_pioggia",
+          "disabled_by_default": false,
+          "icon": "mdi:weather-rainy",
+          "entity_category": 0,
+          "device_class": "",
+          "unit_of_measurement": "intensity",
+          "accuracy_decimals": 0,
+          "force_update": false,
+          "state_class": 1,
+          "legacy_last_reset_type": 0
+        },
+        {
+          "object_id": "temperatura_rg-09",
+          "key": 1111463167,
+          "name": "Temperatura RG-09",
+          "unique_id": "esphome-web-306facsensortemperatura_rg-09",
+          "disabled_by_default": false,
+          "icon": "mdi:thermometer",
+          "entity_category": 0,
+          "device_class": "",
+          "unit_of_measurement": "\u00b0C",
+          "accuracy_decimals": 0,
+          "force_update": false,
+          "state_class": 1,
+          "legacy_last_reset_type": 0
+        }
+      ],
+      "text_sensor": [],
+      "update": [],
+      "binary_sensor": [
+        {
+          "object_id": "rg-09__troppo_freddo",
+          "key": 3459114897,
+          "name": "RG-09: Troppo Freddo",
+          "unique_id": "esphome-web-306facbinary_sensorrg-09__troppo_freddo",
+          "disabled_by_default": false,
+          "icon": "",
+          "entity_category": 0,
+          "device_class": "cold",
+          "is_status_binary_sensor": false
+        },
+        {
+          "object_id": "rg-09__lente_sporco",
+          "key": 2312614741,
+          "name": "RG-09: Lente Sporco",
+          "unique_id": "esphome-web-306facbinary_sensorrg-09__lente_sporco",
+          "disabled_by_default": false,
+          "icon": "",
+          "entity_category": 0,
+          "device_class": "problem",
+          "is_status_binary_sensor": false
+        },
+        {
+          "object_id": "rg-09__emettitore_saturo",
+          "key": 3531256377,
+          "name": "RG-09: Emettitore Saturo",
+          "unique_id": "esphome-web-306facbinary_sensorrg-09__emettitore_saturo",
+          "disabled_by_default": false,
+          "icon": "",
+          "entity_category": 0,
+          "device_class": "problem",
+          "is_status_binary_sensor": false
+        }
+      ]
+    },
+    "dashboard": {
+      "configured": true,
+      "supports_update": true,
+      "last_update_success": false,
+      "last_exception": {
+        "__type": "<class 'aiohttp.client_exceptions.ClientResponseError'>",
+        "repr": "ClientResponseError(RequestInfo(url=URL('http://127.0.0.1:65212/devices'), method='GET', headers=<CIMultiDictProxy('Host': '127.0.0.1:65212', 'User-Agent': 'HomeAssistant/2025.6.3 aiohttp/3.12.13 Python/3.13', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br')>, real_url=URL('http://127.0.0.1:65212/devices')), (), status=502, message='Bad Gateway', headers=<CIMultiDictProxy('Server': 'nginx', 'Date': 'Mon, 21 Jul 2025 06:26:09 GMT', 'Content-Type': 'text/html', 'Content-Length': '150', 'Connection': 'keep-alive')>)"
+      },
+      "addon": "5c53de3b_esphome",
+      "has_matching_name": true,
+      "device": {
+        "configuration": "esphome-web-306fac.yaml",
+        "current_version": "2025.7.2",
+        "deployed_version": "2025.7.2",
+        "loaded_integrations": [
+          "api",
+          "binary_sensor",
+          "esp32",
+          "esphome",
+          "hydreon_rgxx",
+          "logger",
+          "md5",
+          "mdns",
+          "network",
+          "ota",
+          "preferences",
+          "safe_mode",
+          "sensor",
+          "socket",
+          "uart",
+          "wifi"
+        ],
+        "target_platform": "ESP32"
+      }
+    }
+  }
+}
