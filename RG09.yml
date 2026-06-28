@@ -1,7 +1,8 @@
 substitutions:
   name: centralina-pioggia-rg09
   friendly_name: "Centralina pioggia"
-
+  build_mode: "Debug"
+  
 esphome:
   name: $name
   friendly_name: $friendly_name
@@ -10,7 +11,7 @@ esphome:
   comment: "Sensore pioggia RG-09 con sensore di temperatura"
   project:
     name: "garubi.centralina-pioggia-rg09"
-    version: "1.2.0"
+    version: "1.2.0-debug"
 
 esp32:
   board: esp32dev
@@ -98,6 +99,12 @@ text_sensor:
     reset_reason:
       name: "$friendly_name - Reset Reason"
 
+  - platform: template
+    name: "$friendly_name - Build Mode"
+    icon: "mdi:bug"
+    update_interval: never
+    lambda: |-
+      return {"$build_mode"};
 binary_sensor:
   - platform: hydreon_rgxx
     hydreon_rgxx_id: hydreon_1
