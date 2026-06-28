@@ -10,7 +10,7 @@ esphome:
   comment: "Sensore pioggia RG-09 con sensore di temperatura"
   project:
     name: "garubi.centralina-pioggia-rg09"
-    version: "1.0.0"
+    version: "1.2.0"
 
 esp32:
   board: esp32dev
@@ -61,7 +61,14 @@ sensor:
     moisture:
       name: "Livello Pioggia"
     temperature:
-      name: "Temperatura RG-09"
+      name: "RG-09: temperatura sensore"
+  - platform: dallas_temp
+    name: "Temperatura esterna"
+    update_interval: 30s
+    # address: "0x1122334455667788"  # Rimuovi il commento e inserisci l'indirizzo del sensore dopo averlo identificato
+    resolution: 12  # Risoluzione in bit (9-12)
+    filters:
+      - filter_out: nan
 
 binary_sensor:
   - platform: hydreon_rgxx
@@ -72,3 +79,9 @@ binary_sensor:
       name: "RG-09: Lente Sporco"
     em_sat:
       name: "RG-09: Emettitore Saturo"
+
+# Configurazione corretta per il bus One Wire secondo la documentazione
+one_wire:
+  platform: gpio
+  pin: GPIO32
+  # id: dallas_bus  # opzionale
